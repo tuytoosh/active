@@ -1,0 +1,44 @@
+{
+    "name": "tuytoosh/active",
+    "description": "Active class in blade templates",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Active\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hamid Haghdoost",
+            "email": "tuytoosh@yahoo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.0.0",
+        "illuminate/support": "10.x-dev"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Active\\ServiceProvider"
+            ],
+            "aliases": {
+                "Active": "Active\\Facade"
+            }
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "8.0.x-dev"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Active\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
+    }
+}
