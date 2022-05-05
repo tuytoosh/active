@@ -16,7 +16,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^8.0.0",
-        "illuminate/support": "10.x-dev"
+        "illuminate/support": "^10.0.0"
     },
     "extra": {
         "laravel": {
