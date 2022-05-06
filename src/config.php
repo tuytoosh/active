@@ -2,5 +2,5 @@
 
 
 return [
-    'default_class' => "active"
+    'class' => "active"
 ];

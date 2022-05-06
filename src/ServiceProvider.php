@@ -29,8 +29,8 @@ class ServiceProvider extends Provider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . './config.php' => config_path('active.php'),
-        ]);
+            __DIR__ . '/config.php' => config_path('active.php'),
+        ], 'config');
 
         Blade::directive('active', function ($route, $class = null) {
             return "<?php echo app('active')->active({$route}, {$class}); ?>";

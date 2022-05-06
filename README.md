@@ -9,7 +9,7 @@ composer require tuytoosh/active
 A simple configuration file has a config key for **default active class**.
 Use
 ```
-php artisan config:publish active
+php artisan vendor:publish --tag=config --force
 ```
 in order to publish the configuration file. The config key is located in `./config/active.php` file and you can replace the default value with your own.
 
