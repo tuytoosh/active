@@ -33,6 +33,7 @@ class="@active('home', 'open')"
 - [ ] Add tests
 - [ ] Make it work with other version of Laravel
 - [ ] Support for route parameters!
+- [ ] support for multiple routes `in_array()`
 
 
 ## License
