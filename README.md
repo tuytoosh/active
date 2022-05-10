@@ -28,10 +28,16 @@ You can override the default active class by passing second parameter to the dir
 class="@active('home', 'open')"
 ```
 
+### Use `*` for all routes
+- `class="@active('*')"` will be `active` for all routes
+- `class="@active('admin.*')"` will be `active` for all routes that starts with `admin.`
+- `class="@active('admin.post.*', 'open')"` will be `open` for all routes that starts with `admin.post.`
+```
+
 ## Todo
-- [ ] Add support for regex patterns
-- [ ] Add tests
-- [ ] Make it work with other version of Laravel
+- [x] Add support for * at the end of route name
+- [x] Add tests
+- [ ] Make it compatible with older versions of Laravel
 - [ ] Support for route parameters!
 - [ ] support for multiple routes `in_array()`
 
@@ -41,3 +47,8 @@ MIT
 
 ## Contributing
 Please feel free to fork this project and make pull requests.
+Test env is ready to use with orchestra testbench and you just need run:
+```
+composer install
+./vendor/bin/phpunit --debug --colors
+```
