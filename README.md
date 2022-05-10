@@ -32,7 +32,6 @@ class="@active('home', 'open')"
 - `class="@active('*')"` will be `active` for all routes
 - `class="@active('admin.*')"` will be `active` for all routes that starts with `admin.`
 - `class="@active('admin.post.*', 'open')"` will be `open` for all routes that starts with `admin.post.`
-```
 
 ## Todo
 - [x] Add support for * at the end of route name
