@@ -1,6 +1,6 @@
 <?php
 
-namespace Active\Tests\Unit;
+namespace Active\Tests;
 
 
 use Active\Tests\TestCase;
