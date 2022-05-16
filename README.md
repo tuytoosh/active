@@ -33,12 +33,19 @@ class="@active('home', 'open')"
 - `class="@active('admin.*')"` will be `active` for all routes that starts with `admin.`
 - `class="@active('admin.post.*', 'open')"` will be `open` for all routes that starts with `admin.post.`
 
+## Array of routes
+You can pass an array of routes as first parameter to the directive like this:
+```
+class="@active(['admin.dashboard', 'user.dashboard'])"
+```
+`*` and exact patterns will work as well.
+
 ## Todo
 - [x] Add support for * at the end of route name
 - [x] Add tests
 - [ ] Make it compatible with older versions of Laravel
 - [ ] Support for route parameters!
-- [ ] support for multiple routes `in_array()`
+- [x] support for array of route patterns
 
 
 ## License
