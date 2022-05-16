@@ -25,5 +25,7 @@ class ArrayTest extends TestCase
         Route::shouldReceive('getName')->andReturn('home');
         $this->assertEquals('active', app('active')->active(['home', 'about'], 'active'));
         $this->assertEquals("", app('active')->active([], 'active'));
+        $this->assertEquals("active", app('active')->active(['test', 'hom*'], 'active'));
+        $this->assertEquals("", app('active')->active(['test', 'test*'], 'active'));
     }
 }
