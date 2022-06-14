@@ -2,8 +2,8 @@
 
 namespace Active;
 
-use Illuminate\Support\ServiceProvider as Provider;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider as Provider;
 
 class ServiceProvider extends Provider
 {
@@ -17,8 +17,6 @@ class ServiceProvider extends Provider
         $this->app->bind('active', function () {
             return new Core();
         });
-
-
     }
 
     /**
@@ -29,7 +27,7 @@ class ServiceProvider extends Provider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/config.php' => config_path('active.php'),
+            __DIR__.'/config.php' => config_path('active.php'),
         ], 'config');
 
         Blade::directive('active', function ($route, $class = null) {
