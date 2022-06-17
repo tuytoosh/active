@@ -1,13 +1,11 @@
 <?php
 
-namespace Active\Tests;
-
+namespace Active\Tests\Feature;
 
 use Active\Core;
 use Illuminate\Support\Facades\Route;
 use Active\Facade;
 use Active\Tests\TestCase;
-
 
 class ArrayTest extends TestCase
 {

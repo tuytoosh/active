@@ -1,36 +1,43 @@
 <?php
 
 namespace Active;
-use Illuminate\Support\Str;
+
+use Active\Checkers\ExactChecker;
+use Active\Checkers\StarChecker;
+
 class Core
 {
+    public $chckers = [
+        ExactChecker::class,
+        StarChecker::class,
+    ];
     public function active($route, $class = null)
     {
         $class = $class ?? config('active.class') ?? 'active';
         $currentRouteName = app('router')->current()->getName();
 
-        if (is_array($route))
+        if (is_array($route)) {
             return $this->arrayHandler($route, $currentRouteName, $class);
+        }
 
         return $this->matches($route, $currentRouteName) ? $class : "";
     }
-    public function matches($route, $currentRouteName) {
-        if ($route == '*') {
-            return true;
+    public function matches($route, $currentRouteName)
+    {
+        foreach ($this->chckers as$value) {
+            $checker = new $value;
+            if ($checker->check($route, $currentRouteName)) {
+                return true;
+            }
         }
-
-        if (Str::endsWith($route, "*")) {
-            $start_with = Str::replaceLast("*", "", $route);
-            return Str::startsWith($currentRouteName, $start_with);
-        }
-
-        return $route == $currentRouteName;
-
+        return false;
     }
-    public function arrayHandler($routes, $currentRouteName, $class) {
-        foreach($routes as $route) {
-            if ($this->matches($route, $currentRouteName))
+    public function arrayHandler($routes, $currentRouteName, $class)
+    {
+        foreach ($routes as $route) {
+            if ($this->matches($route, $currentRouteName)) {
                 return $class;
+            }
         }
         return "";
     }

@@ -17,8 +17,6 @@ class ServiceProvider extends Provider
         $this->app->bind('active', function () {
             return new Core();
         });
-
-
     }
 
     /**
