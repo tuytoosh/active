@@ -11,10 +11,12 @@ class StarChecker implements Checker
         if ($route == '*') {
             return true;
         }
-        if (Str::endsWith($route, "*")) {
-            $start_with = Str::replaceLast("*", "", $route);
+        if (Str::endsWith($route, '*')) {
+            $start_with = Str::replaceLast('*', '', $route);
+
             return Str::startsWith($currentRouteName, $start_with);
         }
+
         return false;
     }
 }
