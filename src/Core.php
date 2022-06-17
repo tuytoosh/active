@@ -20,8 +20,9 @@ class Core
             return $this->arrayHandler($route, $currentRouteName, $class);
         }
 
-        return $this->matches($route, $currentRouteName) ? $class : "";
+        return $this->matches($route, $currentRouteName) ? $class : '';
     }
+
     public function matches($route, $currentRouteName)
     {
         foreach ($this->chckers as$value) {
@@ -32,6 +33,7 @@ class Core
         }
         return false;
     }
+
     public function arrayHandler($routes, $currentRouteName, $class)
     {
         foreach ($routes as $route) {
@@ -39,6 +41,7 @@ class Core
                 return $class;
             }
         }
-        return "";
+
+        return '';
     }
 }

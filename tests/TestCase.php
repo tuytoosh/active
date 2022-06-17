@@ -7,7 +7,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     /**
      * Get package providers.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param \Illuminate\Foundation\Application $app
      *
      * @return array
      */
@@ -21,14 +21,14 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     /**
      * Override application aliases.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param \Illuminate\Foundation\Application $app
      *
      * @return array
      */
     protected function getPackageAliases($app)
     {
         return [
-            'Active' => Active\Facade::class
+            'Active' => Active\Facade::class,
         ];
     }
 
