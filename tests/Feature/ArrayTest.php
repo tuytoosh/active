@@ -2,8 +2,8 @@
 
 namespace Active\Tests\Feature;
 
-use Illuminate\Support\Facades\Route;
 use Active\Tests\TestCase;
+use Illuminate\Support\Facades\Route;
 
 class ArrayTest extends TestCase
 {

@@ -17,13 +17,13 @@ class StarTest extends TestCase
     /** @test */
     public function single_star_is_activated()
     {
-        $this->assertEquals('open', app('active')->active("*"));
+        $this->assertEquals('open', app('active')->active('*'));
     }
 
     /** @test */
     public function ends_with_star_is_activated()
     {
-        $this->assertEquals('open', app('active')->active("admin.*"));
-        $this->assertEquals('is-active', app('active')->active("admin.*", "is-active"));
+        $this->assertEquals('open', app('active')->active('admin.*'));
+        $this->assertEquals('is-active', app('active')->active('admin.*', 'is-active'));
     }
 }
