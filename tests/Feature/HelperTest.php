@@ -13,7 +13,7 @@ class HelperTest extends TestCase
     }
 
     /** @test */
-    public function helper_test_is_ok()
+    public function active_helper_test_is_ok()
     {
         Route::shouldReceive('current')->andReturnSelf();
         Route::shouldReceive('getName')->andReturn('home');
@@ -21,5 +21,17 @@ class HelperTest extends TestCase
         $this->assertEquals('', active([], 'active'));
         $this->assertEquals('active', active(['test', 'hom*'], 'active'));
         $this->assertEquals('', active(['test', 'test*'], 'active'));
+    }
+
+    /** @test */
+    public function is_active_helper_test_is_ok()
+    {
+        Route::shouldReceive('current')->andReturnSelf();
+        Route::shouldReceive('getName')->andReturn('home');
+        // $this->assertTrue(isActive(['home', 'about'], 'active'));
+        // $this->assertFalse(isActive([], 'active'));
+        // $this->assertTrue(isActive(['test', 'hom*'], 'active'));
+        // $this->assertFalse(isActive(['test', 'test*'], 'active'));
+        $this->assertTrue(isActive(['home']));
     }
 }

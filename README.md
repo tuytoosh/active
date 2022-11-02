@@ -40,6 +40,21 @@ class="@active(['admin.dashboard', 'user.dashboard'])"
 ```
 `*` and exact patterns will work as well.
 
+## active() and isActive() helpers
+All features are available in active() helper function. for example you can use it in your controller like this:
+```
+// returns string
+$class = active('home');
+```
+or
+```
+// returns boolean
+if(isActive('home')){
+
+}
+```
+
+
 ## Todo
 - [x] Add support for * at the end of route name
 - [x] Add tests
