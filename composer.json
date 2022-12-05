@@ -5,7 +5,10 @@
     "autoload": {
         "psr-4": {
             "Active\\": "src/"
-        }
+        },
+        "files": [
+            "./src/helper.php"
+        ]
     },
     "authors": [
         {
@@ -34,10 +37,7 @@
     "autoload-dev": {
         "psr-4": {
             "Active\\Tests\\": "tests/"
-        },
-        "files": [
-            "./src/helper.php"
-        ]
+        }
     },
     "scripts": {
         "post-autoload-dump": [
