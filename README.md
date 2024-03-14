@@ -11,7 +11,15 @@ Use
 ```
 php artisan vendor:publish --tag=config --force
 ```
-in order to publish the configuration file. The config key is located in `./config/active.php` file and you can replace the default value with your own.
+in order to publish the configuration file. The config key is located in `./config/active.php` file and you can replace the default value with your own. In the configuration you can change default `active` and `inactive` classes. For example you can use tailwind classes to activate or deactivate navbar menu items:
+```
+<?php
+
+return [
+    'class' => 'active',
+    'inactive_class' => '',
+];
+```
 
 ## How to use
 With this package instead of using:
@@ -22,10 +30,10 @@ In blade files you can simply use:
 ```
 class="@active('home')"
 ```
-### Override default active class
+### Override default active and inactive classes
 You can override the default active class by passing second parameter to the directive like this:
 ```
-class="@active('home', 'open')"
+class="@active('home', 'open', 'closed')"
 ```
 
 ### Use `*` for all routes
