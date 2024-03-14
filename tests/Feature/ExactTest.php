@@ -54,6 +54,4 @@ class ExactTest extends TestCase
         app()['config']->set('active.inactive_class', 'inactive');
         $this->assertEquals('inactive', app('active')->active('another'));
     }
-
-
 }
